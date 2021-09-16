@@ -1,0 +1,368 @@
+:root {
+    font-size: clamp(4.68px, 1.3vw, 13.52px);
+    background-color: #F3F2EE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ALL PROPORTIONS RELATED TO THE BODY WIDTH AND HEIGHT */
+body {
+    height: 100vh;
+    width: clamp(360px, 100%, 1040px);
+}
+
+/* HEADER */
+header {
+    aspect-ratio: 769 / 59;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+#linkedin_Logo {
+    height: 57.63%;
+    position: absolute;
+    top: 22.03%;
+    left: 4.03%;
+}
+
+#search_Form {
+    background-color: #EEF3F7;
+    border-radius: 4px;
+    width: 30.56%;
+    height: 57.63%;
+    position: absolute;
+    top: 22.03%;
+    left: 8.97%;
+}
+
+#search_Form:focus-within {
+    width: 39.66%;
+    transition: width 0.5s;
+}
+
+#search_Form img {
+    height: 32.35%;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 35.29%;
+    left: 6.38%;
+}
+
+#search_Form input {
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 14.47%;
+    width: 85.53%;
+    height: 100%;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 50.71%;
+    height: 100%;
+    width: 49.29%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    height: 61.02%;
+    width: 70.45%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav li {
+    height: 100%;
+}
+
+nav a {
+    height: 100%;
+    text-decoration: none;
+}
+
+nav a:not(#profile_Link):hover img, nav a:not(#profile_Link):hover p {
+    filter: contrast(40%);
+}
+
+nav li div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav img {
+    margin-bottom: 0.25rem;
+    height: 55.56%;
+    aspect-ratio: 1;
+}
+
+nav p {
+    margin-top: 0.25rem;
+    font-family: 'Ropa Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+    color: #000000;
+}
+
+#profile_Link div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile_Icon {
+    height: 43.03%;
+    aspect-ratio: 1;
+    border-radius: 10vw;
+    margin-bottom: 0.131rem;
+}
+
+#profile_Link div p {
+    margin-top: 0.131rem;
+}
+
+#profile_Link {
+    margin-right: 2.94%;
+}
+
+/* MAIN */
+main {
+    box-sizing: border-box;
+    padding: 4.94% 3.38%;
+    aspect-ratio: 769 / 963;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#profile {
+    height: 36.08%;
+    width: 100%;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+#profile_Photo {
+    border-radius: 10vw;
+    width: 14.87%;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 18.44%;
+    left: 4.38%;
+}
+
+#profile_Background {
+    height: 42.19%;
+    width: 100%;
+}
+
+#profile_Card {
+    height: 57.81%;
+    width: 100%;
+    position: relative;
+}
+
+#profile_Card > div {
+    width: 96.94%;
+    height: 73.76%;
+    position: absolute;
+    top: 26.24%;
+    left: 3.06%;
+
+}
+
+h1, h2, h3, main p {
+    font-family: 'Rambla', sans-serif;
+    color: #000000;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 122.67%;
+    margin-bottom: 0.5rem;
+}
+
+#profile_Card h2 {
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 122.43%;
+    margin-bottom: 0.5rem;
+}
+
+#profile_Card p {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #666666;
+    line-height: 122.43%;
+    margin-bottom: 1.1rem;
+}
+
+/* Div with 3 Buttons */
+#profile_Card > div > div {
+    width: 45.61%;
+    height: 15.39%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#profile_Card button {
+    height: 100%;
+    font-family: 'Rambla', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: 1px solid #666666;
+    border-radius: 15px;
+}
+
+#profile_Card button:first-child:hover {
+    filter: brightness(70%);
+}
+
+#profile_Card button:nth-child(n+1):hover {
+    border-width: 2px;
+}
+
+#profile_Card button:nth-child(1) {
+    width: 41.42%;
+    background-color: #0B65C2;
+    color: #FFFFFF;
+}
+
+#profile_Card button:nth-child(2) {
+    width: 32.81%;
+    background-color: #FFFFFF;
+    color: #666666;
+}
+
+#profile_Card button:nth-child(3) {
+    width: 17.03%;
+    background-color: #FFFFFF;
+    color: #666666;
+}
+
+#details {
+    height: 60.32%;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+}
+
+#details h2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 122.43%;
+    position: absolute;
+    top: 5.06%;
+    left: 2.93%;
+}
+
+#details h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 122.42%;
+}
+
+#details p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 122.36%;
+}
+
+#details p:not(:first-of-type) {
+    color: #666666;
+}
+
+#details img {
+    width: 5.05%;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#details a > div {
+    width: 91.92%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 8.08%;
+}
+
+#details a:hover h3, #details a:hover > div > p {
+    text-decoration: underline;
+}
+
+#experience {
+    height: 59.06%;
+    width: 100%;
+    border-bottom: 1px solid #EBEBEB;
+    position: relative;
+}
+
+#experience ul {
+    height: 80.38%;
+    width: 96.65%;
+    position: absolute;
+    top: 19.62%;
+    left: 3.35%;
+}
+
+#experience li {
+    width: 100%;
+    height: 46.06%;
+    position: relative;
+}
+
+#experience div div {
+    width: 99.53%;
+    height: 40.17%;
+    position: absolute;
+    top: 59.83%;
+    left: 0.47%;
+}
+
+#experience li:first-child div div {
+    border-bottom: 1px solid #EBEBEB;
+}
+
+#experience li:last-child {
+    transform: translateY(16.24%);
+}
+
+#education {
+    height: 40.94%;
+    width: 100%;
+    position: relative;
+}
+
+#education ul {
+    height: 70.78%;
+    width: 96.65%;
+    position: absolute;
+    top: 29.22%;
+    left: 3.35%;
+}
+
+#education li {
+    height: 50%;
+    width: 100%;
+    position: relative;
+}
