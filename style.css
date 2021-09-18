@@ -1,4 +1,4 @@
-/* RESPONSIVE FONT-SIZE IN ROOT TO BE ABLE TO USE RESPONSIVE REM */
+/* RESPONSIVE FONT-SIZE IN ROOT TO BE ABLE TO USE RESPONSIVE REM UNIT */
 :root {
     font-size: clamp(6.5px, 1.3vw, 15.6px);
     background-color: #F3F2EE;
@@ -7,17 +7,44 @@
     align-items: center;
 }
 
-/* ALL PROPORTIONS RELATED TO THE BODY WIDTH AND HEIGHT */
+/* ALL PROPORTIONS RELATED TO THE BODY WIDTH */
 body {
-    height: 100vh;
+    height: max-content;
     width: clamp(500px, 100%, 1200px);
+}
+
+a {
+    text-decoration: none;
 }
 
 /* HEADER */
 header {
+    width: 100%;
     aspect-ratio: 769 / 59;
     background-color: #FFFFFF;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+header p {
+    font-family: 'Ropa Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+    color: #000000;
+    filter: contrast(40%)
+}
+
+/* MAKE SURE THAT THE HEADER AREA HAS A WHITE BACKGROUND-COLOR WHEN THE VIEWPORT WIDTH IS BIGGER THAN THE BODY MAX-WIDTH */
+header::before {
+    content: "";
+    background-color: #FFFFFF;
+    width: 100vw;
+    height: 5.9rem;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 #linkedin_Logo {
@@ -43,12 +70,34 @@ header {
     transition: width 0.5s;
 }
 
-#search_Form img {
+/* PUT A TRANSPARENT BLACK BOX ON TOP OF MAIN AREA WHEN THE SEARCH BAR IS SELECTED */
+#search_Form:focus-within::before {
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 5.9rem;
+    left: 0;
+}
+
+/* POSITION THE LOUPE IMAGE ON THE LEFT PART OF THE SEARCH BAR */
+#search_Form > img {
     height: 32.35%;
     aspect-ratio: 1;
     position: absolute;
     top: 35.29%;
-    left: 6.38%;
+    left: 1.5rem;
+}
+
+/* MAKE THE SEARCH INPUT SELECTABLE BY CLICKING IN ANY PART OF THE SEARCH BAR AND PRESENTS A TEXT SYMBOL AS MOUSE POINTER WHEN HOVERING OVER ANY PART OF THE SEARCH BAR */
+#search_Form label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 14.47%;
+    height: 100%;
+    cursor: text;
 }
 
 #search_Form input {
@@ -65,6 +114,120 @@ header {
     height: 100%;
 }
 
+/* CREATE A HIDDEN PAST SEARCH BOX BELOW THE SEARCH BAR */
+#search_Form > div {
+    border: 1px solid #EEF3F7;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    width: 45.75rem;
+    height: 500%;
+    position: absolute;
+    top: 101%;
+    left: 0;
+    display: none;
+}
+
+/* DISPLAY THE PAST SEARCH BOX WHEN THE SEARCH BAR IS SELECTED */
+#search_Form:focus-within > div {
+    display: initial;
+}
+
+/* DIVIDE AND ORGANIZE THE PAST SEARCH BOX INTO 2 EQUAL DIVS WITH IDS RECENT_SEARCH AND SEARCH_SUGGESTIONS RESPECTIVELY */
+#recent_Search, #search_Suggestions {
+    box-sizing: border-box;
+    height: 50%;
+    padding: 2%;
+}
+
+#recent_Search {
+    border-bottom: 1px solid #EBEBEB;
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+}
+
+#recent_Search > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#recent_Search ul {
+    height: 100%;
+    display: flex;
+}
+
+#recent_Search li {
+    height: 100%;
+    width: max-content;
+    box-sizing: border-box;
+    padding: 1% 2%;
+}
+
+#recent_Search li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#recent_Search li div {
+    width: min-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#recent_Search img {
+    height: 2.539rem;
+    aspect-ratio: 1;
+    border-radius: 10vw;
+    margin-bottom: 0.131rem;
+}
+
+#recent_Search ul p {
+    margin-top: 0.131rem;
+    text-align: center;
+    line-height: 1.1;
+    filter: contrast(100%);
+}
+
+#recent_Search > div > a > p {
+    filter: contrast(100%);
+    padding: .5ch 1ch;
+    border-radius: 10%;
+}
+
+#recent_Search > div > a > p:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#search_Suggestions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+#search_Suggestions div {
+    display: flex;
+    align-items: center;
+    gap: 3%;
+}
+
+#search_Suggestions div:hover::before {
+    content: "";
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#search_Suggestions img {
+    width: 2.4%;
+    aspect-ratio: 1;
+}
+
+/* POSITION THE NAVBAR IN THE RIGHT PART OF THE HEADER */
 nav {
     position: absolute;
     top: 0;
@@ -76,7 +239,7 @@ nav {
     align-items: center;
 }
 
-/* ORGANIZE THE NAVIGATION SYMBOLS WITH EQUAL SPACES BETWEEN THEM */
+/* ORGANIZE THE NAVIGATION BAR WITH EQUAL SPACING, EXCEPT WITH THE PROFILE ICON AT THE RIGHT PART OF THE HEADER */
 nav ul {
     height: 61.02%;
     width: 70.45%;
@@ -89,14 +252,26 @@ nav li {
     height: 100%;
 }
 
-nav a {
-    height: 100%;
-    text-decoration: none;
+/* ADJUST THE VISIBLE SPACING BETWEEN EACH NAVIGATION SYMBOL SO THEY HAVE EQUAL SPACING BETWEEN THE SYMBOLS AND NOT BETWEEN THE TEXT BELOW EACH SYMBOL */
+nav li:nth-child(2), nav li:nth-child(3) {
+    margin-left: 4.87%;
 }
 
-/* MAKE NAVIGATION SYMBOLS IN THE HEADER BRIGHTER WHEN HOVERED OVER */
-nav li a:hover div * {
+nav li:nth-child(4) {
+    margin-left: 4.12%;
+}
+
+nav a {
+    height: 100%;
+}
+
+/* MAKE NAVIGATION SYMBOLS IN THE HEADER BRIGHTER WHEN NOT HOVERED OVER AND DARKER WHEN HOVERED OVER*/
+nav li a div * {
     filter: contrast(40%);
+}
+
+nav li a:hover div * {
+    filter: contrast(100%);
 }
 
 /* ORGANIZE EACH SYMBOL AND TEXT IN THE NAVIGATION BAR VERTICALLY */
@@ -114,13 +289,8 @@ nav img {
     aspect-ratio: 1;
 }
 
-nav p {
+nav ul p {
     margin-top: 0.25rem;
-    font-family: 'Ropa Sans', sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    font-style: normal;
-    color: #000000;
 }
 
 /* ORGANIZE THE PROFILE LINK IN THE RIGHT PART OF THE HEADER */
@@ -139,12 +309,16 @@ nav p {
     margin-bottom: 0.131rem;
 }
 
-#profile_Link div p {
+#profile_Link p {
     margin-top: 0.131rem;
 }
 
+#profile_Link:hover p {
+    filter: contrast(100%);
+}
+
 #profile_Link {
-    margin-right: 2.94%;
+    margin-right: 7.02%;
 }
 
 /* MAIN */
