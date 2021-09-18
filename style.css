@@ -1,6 +1,6 @@
 /* RESPONSIVE FONT-SIZE IN ROOT TO BE ABLE TO USE RESPONSIVE REM UNIT */
 :root {
-    font-size: clamp(6.5px, 1.3vw, 15.6px);
+    font-size: clamp(4.68px, 1.3vw, 15.6px);
     background-color: #F3F2EE;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
 /* ALL PROPORTIONS RELATED TO THE BODY WIDTH */
 body {
     height: max-content;
-    width: clamp(500px, 100%, 1200px);
+    width: clamp(360px, 100%, 1200px);
 }
 
 a {
