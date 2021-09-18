@@ -427,6 +427,7 @@ h1 {
 /* SECOND AND THIRD BUTTONS IN THE PROFILE_CARD */
 #profile_Card button:not(:first-child):hover {
     border-width: 2px;
+    padding: 0 1px;
 }
 
 #profile_Card button:not(:first-child) {
