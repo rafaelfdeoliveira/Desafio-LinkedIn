@@ -66,7 +66,7 @@ header::before {
 
 /* INCREASE THE SEARCH BAR WHEN SELECTED */
 #search_Form:focus-within {
-    width: 39.66%;
+    width: 43.56%;
     transition: width 0.5s;
 }
 
@@ -95,7 +95,7 @@ header::before {
     position: absolute;
     top: 0;
     left: 0;
-    width: 14.47%;
+    width: 3.4rem;
     height: 100%;
     cursor: text;
 }
@@ -109,18 +109,23 @@ header::before {
     background-color: transparent;
     position: absolute;
     top: 0;
-    left: 14.47%;
+    left: 3.4rem;
     width: 85.53%;
     height: 100%;
 }
 
-/* CREATE A HIDDEN PAST SEARCH BOX BELOW THE SEARCH BAR */
+/* MAKE THE SEARCH_FORM INPUT FILL ALL REMAINING SPACE IN THE SEARCH_FORM WHEN IT IS INCREASED BY THE USER SELECTING IT */
+#search_Form input:focus {
+    width: 89.85%;
+    transition: width 0.5s;
+}
+
+/* CREATE A HIDDEN PAST SEARCH BOX BELOW THE SEARCH BAR WHICH IS DIVIDED BETWEEN 2 DIVS WITH IDS RECENT_SEARCH AND SEARCH_SUGGESTIONS */
 #search_Form > div {
     border: 1px solid #EEF3F7;
     background-color: #FFFFFF;
     border-radius: 6px;
-    width: 45.75rem;
-    height: 500%;
+    width: 49.8rem;
     position: absolute;
     top: 101%;
     left: 0;
@@ -132,18 +137,12 @@ header::before {
     display: initial;
 }
 
-/* DIVIDE AND ORGANIZE THE PAST SEARCH BOX INTO 2 EQUAL DIVS WITH IDS RECENT_SEARCH AND SEARCH_SUGGESTIONS RESPECTIVELY */
-#recent_Search, #search_Suggestions {
-    box-sizing: border-box;
-    height: 50%;
-    padding: 2%;
-}
-
 #recent_Search {
+    box-sizing: border-box;
+    padding: 2% 2% 0 2%;
     border-bottom: 1px solid #EBEBEB;
     display: flex;
     flex-direction: column;
-    gap: 3%;
 }
 
 #recent_Search > div {
@@ -152,14 +151,10 @@ header::before {
 }
 
 #recent_Search ul {
-    height: 100%;
     display: flex;
 }
 
 #recent_Search li {
-    height: 100%;
-    width: max-content;
-    box-sizing: border-box;
     padding: 1% 2%;
 }
 
@@ -169,7 +164,6 @@ header::before {
 
 #recent_Search li div {
     width: min-content;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -179,7 +173,7 @@ header::before {
 #recent_Search img {
     height: 2.539rem;
     aspect-ratio: 1;
-    border-radius: 10vw;
+    border-radius: 50%;
     margin-bottom: 0.131rem;
 }
 
@@ -201,13 +195,16 @@ header::before {
 }
 
 #search_Suggestions {
+    box-sizing: border-box;
+    padding: 2%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: .5rem;
     position: relative;
 }
 
 #search_Suggestions div {
+    height: 2.83rem;
     display: flex;
     align-items: center;
     gap: 3%;
@@ -216,7 +213,7 @@ header::before {
 #search_Suggestions div:hover::before {
     content: "";
     width: 100%;
-    height: 30%;
+    height: 2.83rem;
     position: absolute;
     left: 0;
     background-color: rgba(0, 0, 0, 0.1);
@@ -231,9 +228,9 @@ header::before {
 nav {
     position: absolute;
     top: 0;
-    left: 50.71%;
-    height: 100%;
-    width: 49.29%;
+    left: 55.66%;
+    bottom: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -242,7 +239,7 @@ nav {
 /* ORGANIZE THE NAVIGATION BAR WITH EQUAL SPACING, EXCEPT WITH THE PROFILE ICON AT THE RIGHT PART OF THE HEADER */
 nav ul {
     height: 61.02%;
-    width: 70.45%;
+    width: 78%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -254,11 +251,11 @@ nav li {
 
 /* ADJUST THE VISIBLE SPACING BETWEEN EACH NAVIGATION SYMBOL SO THEY HAVE EQUAL SPACING BETWEEN THE SYMBOLS AND NOT BETWEEN THE TEXT BELOW EACH SYMBOL */
 nav li:nth-child(2), nav li:nth-child(3) {
-    margin-left: 4.87%;
+    margin-left: 4.89%;
 }
 
 nav li:nth-child(4) {
-    margin-left: 4.12%;
+    margin-left: 4.14%;
 }
 
 nav a {
@@ -305,7 +302,7 @@ nav ul p {
 #profile_Icon {
     height: 43.03%;
     aspect-ratio: 1;
-    border-radius: 10vw;
+    border-radius: 50%;
     margin-bottom: 0.131rem;
 }
 
@@ -318,7 +315,7 @@ nav ul p {
 }
 
 #profile_Link {
-    margin-right: 7.02%;
+    margin-right: 7.8%;
 }
 
 /* MAIN */
