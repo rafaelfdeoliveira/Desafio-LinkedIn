@@ -19,7 +19,6 @@ a {
 
 /* HEADER */
 header {
-    width: 100%;
     aspect-ratio: 769 / 59;
     background-color: #FFFFFF;
     position: sticky;
@@ -121,28 +120,25 @@ header::before {
 }
 
 /* CREATE A HIDDEN PAST SEARCH BOX BELOW THE SEARCH BAR WHICH IS DIVIDED BETWEEN 2 DIVS WITH IDS RECENT_SEARCH AND SEARCH_SUGGESTIONS */
-#search_Form > div {
+header > div {
     border: 1px solid #EEF3F7;
     background-color: #FFFFFF;
     border-radius: 6px;
-    width: 49.8rem;
+    width: 64.76%;
     position: absolute;
-    top: 101%;
-    left: 0;
+    top: 80.4%;
+    left: 8.97%;
     display: none;
 }
 
 /* DISPLAY THE PAST SEARCH BOX WHEN THE SEARCH BAR IS SELECTED */
-#search_Form:focus-within > div {
+#search_Form:focus-within + div {
     display: initial;
 }
 
 #recent_Search {
-    box-sizing: border-box;
     padding: 2% 2% 0 2%;
     border-bottom: 1px solid #EBEBEB;
-    display: flex;
-    flex-direction: column;
 }
 
 #recent_Search > div {
@@ -210,6 +206,7 @@ header::before {
     gap: 3%;
 }
 
+/* MAKE A TRANSPARENT GRAY BOX BEHIND THE SEARCH SUGGESTION WHEN IT IS HOVERED OVER */
 #search_Suggestions div:hover::before {
     content: "";
     width: 100%;
@@ -322,11 +319,10 @@ nav ul p {
 main {
     box-sizing: border-box;
     padding: 4.94% 3.38%;
-    aspect-ratio: 769 / 963;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    gap: 3.05rem;
 }
 
 /* SET A GENERAL RULE FOR FONT-FAMILY AND COLOR INSIDE MAIN */
@@ -336,14 +332,14 @@ h1, h2, h3, main p {
 }
 
 #profile {
-    height: 36.08%;
+    height: 31.35rem;
     width: 100%;
     background-color: #FFFFFF;
     position: relative;
 }
 
 #profile_Photo {
-    border-radius: 10vw;
+    border-radius: 50%;
     width: 14.87%;
     aspect-ratio: 1;
     position: absolute;
@@ -358,7 +354,6 @@ h1, h2, h3, main p {
 
 #profile_Card {
     height: 57.81%;
-    width: 100%;
     position: relative;
 }
 
@@ -442,7 +437,6 @@ h1 {
 
 /* EXPERIENCE AND EDUCATION PARTS */
 #details {
-    height: 60.32%;
     width: 100%;
     background-color: #FFFFFF;
     border-radius: 4px;
@@ -452,9 +446,6 @@ h1 {
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 122.43%;
-    position: absolute;
-    top: 5.06%;
-    left: 2.93%;
 }
 
 #details h3 {
@@ -473,47 +464,47 @@ h1 {
     color: #666666;
 }
 
-#details img {
-    width: 5.05%;
-    aspect-ratio: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-/* POSITION EACH DIV WRAPPER THAT CONTAINS ALL TEXT FOR THE RESPECTIVE EXPERIENCE OR EDUCATION*/
-#details a > div {
-    width: 91.92%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 8.08%;
-}
-
 /* UNDERLINE THE TEXT INSIDE DETAILS WHEN HOVERED OVER, EXCEPT THE EXPERIENCES ACTIVITIES DESCRIPTIONS */
 #details a:hover h3, #details a:hover > div > p {
     text-decoration: underline;
 }
 
 #experience {
-    height: 59.06%;
-    width: 100%;
     border-bottom: 1px solid #EBEBEB;
     position: relative;
 }
 
+#experience h2 {
+    padding-top: 2.23%;
+    padding-left: 2.93%;
+}
+
 #experience ul {
-    height: 80.38%;
     width: 96.65%;
-    position: absolute;
-    top: 19.62%;
-    left: 3.35%;
+    padding-top: 1.39%;
+    padding-left: 3.35%;
 }
 
 #experience li {
-    width: 100%;
-    height: 46.06%;
+    height: 13.38rem;
     position: relative;
+}
+
+#experience img {
+    width: 5.05%;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 13.97%;
+    left: 0;
+}
+
+/* POSITION EACH DIV WRAPPER THAT CONTAINS ALL TEXT FOR EACH EXPERIENCE*/
+#experience a > div {
+    width: 91.92%;
+    height: 86.03%;
+    position: absolute;
+    top: 13.97%;
+    left: 8.08%;
 }
 
 /* POSITION THE DIVS WRAPPERS THAT CONTAIN THE DESCRIPTION FOR EACH EXPERIENCE */
@@ -526,31 +517,48 @@ h1 {
 }
 
 /* ADD A BORDER LINE BETWEEN THE 2 EXPERIENCES WITH SAME WIDTH AS THE EXPERIENCE DESCRIPTION WRAPPER */
-#experience li:first-child div div {
+#experience li:not(:last-child) div div {
     border-bottom: 1px solid #EBEBEB;
 }
 
-/* ADJUST THE SECOND EXPERIENCE POSITION VERTICALLY SO IT IS NOT STICKED TO THE BORDER LINE BETWEEN THE 2 EXPERIENCES*/
-#experience li:not(:first-child) {
-    transform: translateY(16.24%);
+#education {
+    position: relative;
 }
 
-#education {
-    height: 40.94%;
-    width: 100%;
-    position: relative;
+#education h2 {
+    padding-top: 2.37%;
+    padding-left: 2.93%;
 }
 
 #education ul {
-    height: 70.78%;
     width: 96.65%;
-    position: absolute;
-    top: 29.22%;
-    left: 3.35%;
+    padding-top: 4.18%;
+    padding-left: 3.35%;
 }
 
 #education li {
-    height: 50%;
-    width: 100%;
+    height: 7.25rem;
     position: relative;
+}
+
+/* INCREASDE THE VISIBLE HEIGHT OF EACH EDUCATION LI EXCEPT THE LAST ONE SO THE LAST ONE SEEMS A BIT CLOSER TO THE BOTTOM OF THE DETAILS SECTION THAN TO THE EDUCATION LI ABOVE IT */
+#education li:not(:last-child) {
+    padding-bottom: 1.01%;
+}
+
+#education img {
+    width: 5.05%;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* POSITION EACH DIV WRAPPER THAT CONTAINS ALL TEXT FOR EACH EDUCATION*/
+#education a > div {
+    width: 91.92%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 8.08%;
 }
